@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="200" viewBox="0 0 1000 200"
+     role="img" aria-labelledby="t d">
+  <title id="t">Tech</title>
+  <desc id="d">C#, Unity, TypeScript, JavaScript, React Native, Expo, Next.js, Firebase, Python.</desc>
+
+  <defs>
+    <filter id="static"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2">
+      <animate attributeName="baseFrequency" values="0.9;0.6;0.95;0.7" dur="0.3s" repeatCount="indefinite"/>
+    </feTurbulence><feColorMatrix type="saturate" values="0"/></filter>
+    <filter id="fog" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFF6D0" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#F5C542" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="hazard" width="24" height="10" patternUnits="userSpaceOnUse">
+      <rect width="24" height="10" fill="#111111"/>
+      <path d="M0,10 L10,0 L22,0 L12,10 Z" fill="#FFE100"/>
+      <animateTransform attributeName="patternTransform" type="translate" values="0,0;24,0" dur="1.6s" repeatCount="indefinite"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1000" height="200" rx="6"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="200" fill="#0D0D0D"/>
+
+    <!-- TV switches on: picture opens from a thin line -->
+    <g transform="translate(500 100)"><g>
+      <animateTransform attributeName="transform" type="scale" values="1,0.004;1,0.004;1,1"
+                        keyTimes="0;0.4;1" dur="0.5s" fill="freeze"/>
+      <g transform="translate(-500 -100)">
+
+        <!-- scanlines -->
+        <g stroke="#FFE100" stroke-opacity="0.04">
+          <path d="M0,4H1000M0,12H1000M0,20H1000M0,28H1000M0,36H1000M0,44H1000M0,52H1000M0,60H1000M0,68H1000M0,76H1000M0,84H1000M0,92H1000M0,100H1000M0,108H1000M0,116H1000M0,124H1000M0,132H1000M0,140H1000M0,148H1000M0,156H1000M0,164H1000M0,172H1000M0,180H1000M0,188H1000"/>
+        </g>
+
+        <!-- Izanagi-no-Okami: halo and spear of light -->
+        <g transform="translate(860 96)">
+          <circle r="64" fill="none" stroke="#F5C542" stroke-width="1" opacity="0.35"/>
+          <g stroke="#FFF6D0" stroke-width="1.2" opacity="0.55">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+            <path d="M0,-52V-74M0,52V74M-52,0H-74M52,0H74M37,-37L52,-52M-37,37L-52,52M37,37L52,52M-37,-37L-52,-52"/>
+          </g>
+          <circle r="44" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="3 6" opacity="0.5">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="18s" repeatCount="indefinite"/>
+          </circle>
+          <g filter="url(#glow)">
+            <line x1="0" y1="-90" x2="0" y2="110" stroke="#FFFFFF" stroke-width="2.5">
+              <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+            </line>
+            <polygon points="0,-96 7,-72 0,-60 -7,-72" fill="#F5C542"/>
+          </g>
+        </g>
+
+        <!-- title -->
+        <text x="44" y="52" font-family="'Arial Black','Helvetica Neue',Impact,sans-serif" font-weight="900"
+              font-size="26" fill="#FFE100" letter-spacing="6">TECH</text>
+        <rect x="152" y="36" width="60" height="10" fill="url(#hazard)"/>
+
+        <!-- chips -->
+        <g font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.3s" fill="freeze"/>
+            <rect x="44" y="76" width="60" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="44" y="76" width="4" height="36" fill="#FFE100"/><text x="60" y="100">C#</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.38s" fill="freeze"/>
+            <rect x="116" y="76" width="80" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="116" y="76" width="4" height="36" fill="#FFE100"/><text x="132" y="100">Unity</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.46s" fill="freeze"/>
+            <rect x="208" y="76" width="122" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="208" y="76" width="4" height="36" fill="#FFE100"/><text x="224" y="100">TypeScript</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.54s" fill="freeze"/>
+            <rect x="342" y="76" width="118" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="342" y="76" width="4" height="36" fill="#FFE100"/><text x="358" y="100">JavaScript</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.62s" fill="freeze"/>
+            <rect x="472" y="76" width="138" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="472" y="76" width="4" height="36" fill="#FFE100"/><text x="488" y="100">React Native</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.7s" fill="freeze"/>
+            <rect x="44" y="124" width="72" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="44" y="124" width="4" height="36" fill="#FFE100"/><text x="60" y="148">Expo</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.78s" fill="freeze"/>
+            <rect x="128" y="124" width="96" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="128" y="124" width="4" height="36" fill="#FFE100"/><text x="144" y="148">Next.js</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.86s" fill="freeze"/>
+            <rect x="236" y="124" width="104" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="236" y="124" width="4" height="36" fill="#FFE100"/><text x="252" y="148">Firebase</text></g>
+          <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.94s" fill="freeze"/>
+            <rect x="352" y="124" width="88" height="36" fill="#171717" stroke="#FFE100" stroke-opacity="0.45"/><rect x="352" y="124" width="4" height="36" fill="#FFE100"/><text x="368" y="148">Python</text></g>
+        </g>
+
+        <!-- Myriad Truths: beams of light strike down across the chips -->
+        <g>
+          <rect x="90" y="-200" width="3" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3s" repeatCount="indefinite"/></rect>
+          <rect x="250" y="-200" width="3" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3.12s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3.12s" repeatCount="indefinite"/></rect>
+          <rect x="410" y="-200" width="3" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3.06s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3.06s" repeatCount="indefinite"/></rect>
+          <rect x="560" y="-200" width="3" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3.2s" repeatCount="indefinite"/></rect>
+          <rect x="170" y="-200" width="2" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3.26s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3.26s" repeatCount="indefinite"/></rect>
+          <rect x="330" y="-200" width="2" height="200" fill="url(#beam)" opacity="0">
+            <animate attributeName="y" values="-200;200;200" keyTimes="0;0.08;1" dur="6s" begin="3.32s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.01;0.08;1" dur="6s" begin="3.32s" repeatCount="indefinite"/></rect>
+          <!-- flash as the truths land -->
+          <rect width="1000" height="200" fill="#FFF6D0" opacity="0">
+            <animate attributeName="opacity" values="0;0;0.12;0;0" keyTimes="0;0.05;0.07;0.12;1" dur="6s" begin="3s" repeatCount="indefinite"/></rect>
+        </g>
+
+        <!-- fog of the TV world, clearing -->
+        <g filter="url(#fog)" fill="#E8E8E8">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,0;-1100,0"
+                            keyTimes="0;0.35;1" dur="1.8s" fill="freeze"/>
+          <animate attributeName="opacity" values="0.85;0.85;0" keyTimes="0;0.4;1" dur="1.8s" fill="freeze"/>
+          <ellipse cx="160" cy="100" rx="220" ry="90"/><ellipse cx="460" cy="80" rx="240" ry="80"/>
+          <ellipse cx="760" cy="120" rx="260" ry="90"/><ellipse cx="980" cy="90" rx="200" ry="90"/>
+        </g>
+
+        <!-- ambient fog wisp -->
+        <ellipse cx="0" cy="150" rx="160" ry="22" fill="#FFFFFF" opacity="0" filter="url(#fog)">
+          <animate attributeName="cx" values="-200;1200" dur="14s" begin="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0;0.08;0" dur="14s" begin="2s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <rect x="0" y="190" width="1000" height="10" fill="url(#hazard)"/>
+      </g>
+    </g></g>
+
+    <!-- static before the picture settles -->
+    <rect width="1000" height="200" filter="url(#static)" opacity="0.55">
+      <animate attributeName="opacity" values="0.55;0.55;0" keyTimes="0;0.6;1" dur="0.8s" fill="freeze"/>
+    </rect>
+
+    <rect x="0.5" y="0.5" width="999" height="199" rx="6" fill="none" stroke="#FFE100" stroke-opacity="0.6"/>
+  </g>
+</svg>
