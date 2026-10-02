@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="26" viewBox="0 0 1000 26" role="presentation">
+  <defs>
+    <linearGradient id="slash" x1="0" x2="1">
+      <stop offset="0" stop-color="#E60012" stop-opacity="0"/>
+      <stop offset="0.8" stop-color="#E60012"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+  <!-- torn edge -->
+  <path id="tear" d="M0,13 L40,9 L80,16 L130,10 L180,15 L240,9 L300,16 L360,10 L420,15 L480,9 L540,16 L600,10 L660,15 L720,9 L780,16 L840,10 L900,15 L960,9 L1000,13"
+        fill="none" stroke="#5E0E16" stroke-width="2"/>
+  <!-- the slash rips it open in red -->
+  <path d="M0,13 L40,9 L80,16 L130,10 L180,15 L240,9 L300,16 L360,10 L420,15 L480,9 L540,16 L600,10 L660,15 L720,9 L780,16 L840,10 L900,15 L960,9 L1000,13"
+        fill="none" stroke="#E60012" stroke-width="2.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1">
+    <animate attributeName="stroke-dashoffset" values="1;0;0" keyTimes="0;0.35;1" dur="3.6s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.4;0.7;1" dur="3.6s" repeatCount="indefinite"/>
+  </path>
+  <polygon points="-90,9 0,6 6,13 0,20 -90,17" fill="url(#slash)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;1090,0;1090,0"
+                      keyTimes="0;0.35;1" dur="3.6s" repeatCount="indefinite"/>
+  </polygon>
+  <!-- star glint where the slash exits -->
+  <path d="M990,3 L992,11 L1000,13 L992,15 L990,23 L988,15 L980,13 L988,11 Z" fill="#FFFFFF" opacity="0"
+        transform-origin="990 13">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.33;0.37;0.5;1" dur="3.6s" repeatCount="indefinite"/>
+  </path>
+</svg>
