@@ -8,6 +8,8 @@
 - Mobile apps with React Native and Expo
 - Working on an internship finder: scraping, placement tracking, resume parsing
 
+<img src="p5_divider.svg" width="100%"/>
+
 ### Tech
 
 <p>
@@ -21,6 +23,8 @@
   <img src="https://img.shields.io/badge/Firebase-0B0B0E?style=flat-square&logo=firebase&logoColor=E60012"/>
   <img src="https://img.shields.io/badge/Python-0B0B0E?style=flat-square&logo=python&logoColor=E60012"/>
 </p>
+
+<img src="p5_divider.svg" width="100%"/>
 
 <details>
   <summary>ASCII card</summary>
