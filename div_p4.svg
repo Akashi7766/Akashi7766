@@ -1,34 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="26" viewBox="0 0 1000 26" role="presentation">
   <defs>
+    <pattern id="hazard" width="20" height="6" patternUnits="userSpaceOnUse">
+      <rect width="20" height="6" fill="#111111"/>
+      <path d="M0,6 L6,0 L16,0 L10,6 Z" fill="#FFE100"/>
+      <animateTransform attributeName="patternTransform" type="translate" values="0,0;20,0" dur="1.2s" repeatCount="indefinite"/>
+    </pattern>
     <filter id="static" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.6 0.9" numOctaves="1">
-        <animate attributeName="baseFrequency" values="0.6 0.9;0.9 0.6;0.7 0.8" dur="0.4s" repeatCount="indefinite"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.7 0.9" numOctaves="1">
+        <animate attributeName="baseFrequency" values="0.7 0.9;0.9 0.6;0.6 0.8" dur="0.3s" repeatCount="indefinite"/>
       </feTurbulence>
-      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0.88  0 0 0 0 0  0 0 0 1.4 -0.5"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 0.9  0 0 0 0 0.2  0 0 0 1.6 -0.55"/>
     </filter>
-    <linearGradient id="scan" x1="0" x2="1">
+    <linearGradient id="head" x1="0" x2="1">
       <stop offset="0" stop-color="#FFE100" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#FFE100"/>
-      <stop offset="1" stop-color="#FFE100" stop-opacity="0"/>
+      <stop offset="0.75" stop-color="#FFE100"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
     </linearGradient>
-    <filter id="blur" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+    <linearGradient id="pillar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFF6D0"/>
+      <stop offset="1" stop-color="#F5C542" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="burn"><rect x="0" y="0" height="26" width="0">
+      <animate attributeName="width" values="0;1000;1000" keyTimes="0;0.35;1" dur="4s" repeatCount="indefinite"/>
+    </rect></clipPath>
   </defs>
 
   <g>
-    <!-- channel change: picture blinks and jumps sideways -->
-    <animate attributeName="opacity" values="1;1;0.1;1;0.3;1;1" keyTimes="0;0.9;0.91;0.92;0.93;0.94;1" dur="7s" repeatCount="indefinite"/>
-    <animateTransform attributeName="transform" type="translate" values="0,0;0,0;14,0;-8,0;0,0;0,0"
-                      keyTimes="0;0.9;0.91;0.92;0.94;1" dur="7s" repeatCount="indefinite"/>
-    <line x1="0" y1="13" x2="1000" y2="13" stroke="#3A3410" stroke-width="2"/>
-    <rect x="0" y="11" width="1000" height="4" filter="url(#static)" opacity="0.45"/>
-    <rect x="-200" y="11" width="200" height="4" fill="url(#scan)">
-      <animate attributeName="x" values="-200;1000" dur="3s" repeatCount="indefinite"/>
-    </rect>
+    <!-- occasional channel change -->
+    <animate attributeName="opacity" values="1;1;0.15;1;0.4;1;1" keyTimes="0;0.86;0.87;0.88;0.89;0.9;1" dur="8s" repeatCount="indefinite"/>
+    <animateTransform attributeName="transform" type="translate" values="0,0;0,0;12,0;-7,0;0,0;0,0"
+                      keyTimes="0;0.86;0.87;0.88;0.9;1" dur="8s" repeatCount="indefinite"/>
+
+    <!-- crawling hazard band -->
+    <rect x="0" y="10" width="1000" height="6" fill="url(#hazard)" opacity="0.8"/>
+
+    <!-- static burns in behind the scan head, then clears -->
+    <g clip-path="url(#burn)">
+      <rect x="0" y="7" width="1000" height="12" filter="url(#static)">
+        <animate attributeName="opacity" values="0.9;0.9;0;0" keyTimes="0;0.4;0.65;1" dur="4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- scan head -->
+    <polygon points="-110,9 0,6 8,13 0,20 -110,17" fill="url(#head)">
+      <animateTransform attributeName="transform" type="translate" values="0,0;1110,0;1110,0"
+                        keyTimes="0;0.35;1" dur="4s" repeatCount="indefinite"/>
+    </polygon>
   </g>
 
-  <!-- fog wisp drifting along the line -->
-  <ellipse cx="-100" cy="13" rx="90" ry="5" fill="#FFFFFF" opacity="0" filter="url(#blur)">
-    <animate attributeName="cx" values="-100;1100" dur="9s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;0.18;0" dur="9s" repeatCount="indefinite"/>
-  </ellipse>
+  <!-- Myriad Truths: pillars of light rise in its wake -->
+  <g fill="url(#pillar)">
+    <rect x="148" width="3" y="13" height="0"><animate attributeName="y" values="13;13;0;13;13" keyTimes="0;0.047;0.08;0.14;1" dur="4s" repeatCount="indefinite"/><animate attributeName="height" values="0;0;26;0;0" keyTimes="0;0.047;0.08;0.14;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="328" width="3" y="13" height="0"><animate attributeName="y" values="13;13;0;13;13" keyTimes="0;0.104;0.137;0.2;1" dur="4s" repeatCount="indefinite"/><animate attributeName="height" values="0;0;26;0;0" keyTimes="0;0.104;0.137;0.2;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="508" width="3" y="13" height="0"><animate attributeName="y" values="13;13;0;13;13" keyTimes="0;0.161;0.194;0.26;1" dur="4s" repeatCount="indefinite"/><animate attributeName="height" values="0;0;26;0;0" keyTimes="0;0.161;0.194;0.26;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="688" width="3" y="13" height="0"><animate attributeName="y" values="13;13;0;13;13" keyTimes="0;0.218;0.251;0.31;1" dur="4s" repeatCount="indefinite"/><animate attributeName="height" values="0;0;26;0;0" keyTimes="0;0.218;0.251;0.31;1" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="868" width="3" y="13" height="0"><animate attributeName="y" values="13;13;0;13;13" keyTimes="0;0.274;0.307;0.37;1" dur="4s" repeatCount="indefinite"/><animate attributeName="height" values="0;0;26;0;0" keyTimes="0;0.274;0.307;0.37;1" dur="4s" repeatCount="indefinite"/></rect>
+  </g>
+
+  <!-- gold flash where the scan exits -->
+  <path d="M990,1 L992,10 L1000,13 L992,16 L990,25 L988,16 L980,13 L988,10 Z" fill="#F5C542" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.33;0.37;0.52;1" dur="4s" repeatCount="indefinite"/>
+  </path>
 </svg>
