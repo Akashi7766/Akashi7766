@@ -2,11 +2,7 @@
   <img src="p5_banner.svg" alt="Akashi7766" width="100%"/>
 </p>
 
-### About
-
-- Building a 2D roguelike in Unity
-- Mobile apps with React Native and Expo
-- Working on an internship finder: scraping, placement tracking, resume parsing
+<img src="about_card.svg" width="100%" alt="About — Building a 2D roguelike in Unity. Creating a visual novel. Mobile apps with React Native and Expo. Working on an internship finder: scraping, placement tracking, resume parsing."/>
 
 <img src="p5_divider.svg" width="100%"/>
 

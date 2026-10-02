@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="270" viewBox="0 0 1000 270"
+     role="img" aria-labelledby="t d">
+  <title id="t">About</title>
+  <desc id="d">Building a 2D roguelike in Unity. Creating a visual novel. Mobile apps with React Native and Expo. Working on an internship finder: scraping, placement tracking, resume parsing.</desc>
+
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9FD4FF" stop-opacity="0.22"/>
+      <stop offset="0.45" stop-color="#4FC3FF" stop-opacity="0.08"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="0.55" stop-color="#4FC3FF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#1C64F2" stop-opacity="0.2"/>
+    </linearGradient>
+    <radialGradient id="aura" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#4FC3FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4FC3FF" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="1000" height="270" rx="6"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="270" fill="#070D1A"/>
+    <rect x="0" y="0" width="4" height="270" fill="#E60012"/>
+
+    <!-- slow scanline -->
+    <rect x="0" y="-40" width="1000" height="40" fill="#4FC3FF" opacity="0.04">
+      <animate attributeName="y" values="-40;270" dur="7s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- ambient shards drifting up -->
+    <g fill="#4FC3FF">
+      <polygon points="0,0 7,3 2,9" opacity="0.18">
+        <animateTransform attributeName="transform" type="translate" values="620,280;600,-20" dur="13s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="0,0 5,6 -2,7" opacity="0.14">
+        <animateTransform attributeName="transform" type="translate" values="760,290;790,-20" dur="17s" begin="4s" repeatCount="indefinite"/>
+      </polygon>
+      <polygon points="0,0 9,2 4,8" opacity="0.12">
+        <animateTransform attributeName="transform" type="translate" values="420,290;440,-20" dur="21s" begin="9s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+
+    <!-- summoning circle -->
+    <g transform="translate(905 135)">
+      <circle r="78" fill="url(#aura)">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="58" fill="none" stroke="#4FC3FF" stroke-width="1" stroke-dasharray="2 7" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="42" fill="none" stroke="#1C64F2" stroke-width="1.5" stroke-dasharray="18 10" opacity="0.7">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="16s" repeatCount="indefinite"/>
+      </circle>
+      <polygon points="0,-14 10,0 0,14 -10,0" fill="none" stroke="#EAF4FF" stroke-width="1.2" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+      </polygon>
+
+      <!-- periodic summon pulse: ring + small shards -->
+      <circle r="8" fill="none" stroke="#9FD4FF" stroke-width="2" opacity="0">
+        <animate attributeName="r" values="8;8;90" keyTimes="0;0.02;0.3" dur="7s" begin="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.8;0;0" keyTimes="0;0.02;0.3;1" dur="7s" begin="3s" repeatCount="indefinite"/>
+      </circle>
+      <g fill="#9FD4FF" opacity="0">
+        <animate attributeName="opacity" values="0;0.9;0;0" keyTimes="0;0.02;0.28;1" dur="7s" begin="3s" repeatCount="indefinite"/>
+        <polygon points="0,0 8,3 3,9"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-60,-48" keyTimes="0;0.02;0.28" dur="7s" begin="3s" repeatCount="indefinite"/></polygon>
+        <polygon points="0,0 6,7 -2,6"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;54,-56" keyTimes="0;0.02;0.28" dur="7s" begin="3s" repeatCount="indefinite"/></polygon>
+        <polygon points="0,0 9,1 5,7"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;70,30" keyTimes="0;0.02;0.28" dur="7s" begin="3s" repeatCount="indefinite"/></polygon>
+        <polygon points="0,0 4,8 -3,4"><animateTransform attributeName="transform" type="translate" values="0,0;0,0;-48,62" keyTimes="0;0.02;0.28" dur="7s" begin="3s" repeatCount="indefinite"/></polygon>
+      </g>
+    </g>
+
+    <!-- content -->
+    <g font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif">
+      <text x="44" y="62" font-size="26" font-weight="700" fill="#EAF4FF" letter-spacing="6" opacity="0">ABOUT
+        <animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.05s" fill="freeze"/>
+      </text>
+      <rect x="44" y="76" height="2" width="0" fill="#4FC3FF">
+        <animate attributeName="width" values="0;120" dur="0.5s" begin="1.15s" fill="freeze"/>
+      </rect>
+
+      <g font-size="18" fill="#C9D8EE">
+        <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.3s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="translate" values="-24,0;0,0" dur="0.4s" begin="1.3s" fill="freeze"/>
+          <polygon points="52,112 58,118 52,124 46,118" fill="#4FC3FF"><animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/></polygon>
+          <text x="72" y="124">Building a 2D roguelike in Unity</text>
+        </g>
+        <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.45s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="translate" values="-24,0;0,0" dur="0.4s" begin="1.45s" fill="freeze"/>
+          <polygon points="52,150 58,156 52,162 46,156" fill="#4FC3FF"><animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="0.75s" repeatCount="indefinite"/></polygon>
+          <text x="72" y="162">Creating a visual novel</text>
+        </g>
+        <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.6s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="translate" values="-24,0;0,0" dur="0.4s" begin="1.6s" fill="freeze"/>
+          <polygon points="52,188 58,194 52,200 46,194" fill="#4FC3FF"><animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="1.5s" repeatCount="indefinite"/></polygon>
+          <text x="72" y="200">Mobile apps with React Native and Expo</text>
+        </g>
+        <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.75s" fill="freeze"/>
+          <animateTransform attributeName="transform" type="translate" values="-24,0;0,0" dur="0.4s" begin="1.75s" fill="freeze"/>
+          <polygon points="52,226 58,232 52,238 46,232" fill="#4FC3FF"><animate attributeName="opacity" values="1;0.4;1" dur="3s" begin="2.25s" repeatCount="indefinite"/></polygon>
+          <text x="72" y="238">Working on an internship finder: scraping, placement tracking, resume parsing</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- intro: glass pane cracks from the impact point, flashes, shatters -->
+    <g>
+      <rect width="1000" height="270" fill="url(#glass)">
+        <animate attributeName="opacity" values="1;0" dur="0.35s" begin="0.95s" fill="freeze"/>
+      </rect>
+      <g stroke="#EAF4FF" stroke-width="1.4" fill="none" stroke-dasharray="1" stroke-dashoffset="1">
+        <animate attributeName="opacity" values="1;0" dur="0.3s" begin="1s" fill="freeze"/>
+        <path pathLength="1" d="M905,135 L840,96 L780,104 L700,60"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.45s" begin="0.25s" fill="freeze"/></path>
+        <path pathLength="1" d="M905,135 L860,190 L800,214 L760,270"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.45s" begin="0.3s" fill="freeze"/></path>
+        <path pathLength="1" d="M905,135 L960,70 L1000,52"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.4s" begin="0.28s" fill="freeze"/></path>
+        <path pathLength="1" d="M905,135 L956,200 L1000,214"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.4s" begin="0.33s" fill="freeze"/></path>
+        <path pathLength="1" d="M905,135 L812,148 L720,140 L600,170"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.5s" begin="0.36s" fill="freeze"/></path>
+        <path pathLength="1" d="M905,135 L900,40 L880,0"><animate attributeName="stroke-dashoffset" values="1;0" dur="0.35s" begin="0.3s" fill="freeze"/></path>
+      </g>
+      <rect width="1000" height="270" fill="#EAF4FF" opacity="0">
+        <animate attributeName="opacity" values="0;0.55;0" dur="0.3s" begin="0.85s" fill="freeze"/>
+      </rect>
+      <g fill="#9FD4FF" opacity="0">
+        <animate attributeName="opacity" values="0;0.95;0" keyTimes="0;0.1;1" dur="0.9s" begin="0.95s" fill="freeze"/>
+        <polygon points="905,135 860,100 880,150"><animateTransform attributeName="transform" type="translate" values="0,0;-260,-120" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 950,90 930,140"><animateTransform attributeName="transform" type="translate" values="0,0;160,-140" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 870,180 920,170"><animateTransform attributeName="transform" type="translate" values="0,0;-140,150" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 960,180 940,140"><animateTransform attributeName="transform" type="translate" values="0,0;180,130" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 820,130 850,115"><animateTransform attributeName="transform" type="translate" values="0,0;-420,10" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 900,80 915,95"><animateTransform attributeName="transform" type="translate" values="0,0;20,-200" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+        <polygon points="905,135 840,170 860,190"><animateTransform attributeName="transform" type="translate" values="0,0;-330,160" dur="0.9s" begin="0.95s" fill="freeze"/></polygon>
+      </g>
+    </g>
+
+    <rect x="0.5" y="0.5" width="999" height="269" rx="6" fill="none" stroke="#1E3A66"/>
+  </g>
+</svg>
